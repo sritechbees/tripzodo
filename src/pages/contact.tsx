@@ -24,40 +24,55 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError('');
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setError('');
+  setSuccessMsg('');
+
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const phoneRegex = /^\d{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!nameRegex.test(formData.name)) {
+    setError("Name must contain only alphabets.");
+    return;
+  }
+  if (!nameRegex.test(formData.subject)) {
+    setError("Subject must contain only alphabets.");
+    return;
+  }
+  if (!phoneRegex.test(formData.phone)) {
+    setError("Phone number must be exactly 10 digits without special characters.");
+    return;
+  }
+  if (!emailRegex.test(formData.email)) {
+    setError("Email must be valid and contain '@'.");
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      setSuccessMsg("📩 Message sent to 9524605488");
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } else {
+      setError("Failed to send the message.");
+    }
+  } catch (err) {
+    setError("An error occurred. Please try again later.");
+  }
+
+  setTimeout(() => {
     setSuccessMsg('');
-
-    const nameRegex = /^[A-Za-z\s]+$/;
-    const phoneRegex = /^\d{14}$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!nameRegex.test(formData.name)) {
-      setError("Name must contain only alphabets.");
-      return;
-    }
-
-    if (!nameRegex.test(formData.subject)) {
-      setError("Subject must contain only alphabets.");
-      return;
-    }
-
-    if (!phoneRegex.test(formData.phone)) {
-      setError("Phone number must be exactly 14 digits without special characters.");
-      return;
-    }
-
-    if (!emailRegex.test(formData.email)) {
-      setError("Email must be valid and contain '@'.");
-      return;
-    }
-
-    setSuccessMsg("📩 Message sent to 9524605488");
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-
-    setTimeout(() => setSuccessMsg(''), 4000);
-  };
+    setError('');
+  }, 4000);
+};
 
   const contactDetails = [
     {
@@ -67,12 +82,12 @@ const Contact = () => {
     },
     {
       title: 'Email Address',
-      content: 'Travel@tripzodo.com',
+      content: 'travel@tripzodo.com',
       image: '/contact/emaill.png',
     },
     {
       title: 'Hotline',
-      content: '+91 9500093383',
+      content: '+91 9019412772',
       image: '/contact/hotlinee.png',
     },
   ];
@@ -217,7 +232,7 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone Number (14 digits)"
+                  placeholder="Phone Number"
                   className="p-3 border border-gray-300 rounded-md w-full"
                   required
                 />

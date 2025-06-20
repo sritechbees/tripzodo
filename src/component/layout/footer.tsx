@@ -127,11 +127,11 @@ const Footer = () => {
           <ul className="text-sm text-gray-400 space-y-4">
             <li className="flex items-center">
               <FaPhoneAlt className="text-[#fed42a] mr-3" />
-              +91 9500093383
+              +91 9019412772 
             </li>
             <li className="flex items-center">
               <FaEnvelope className="text-[#fed42a] mr-3" />
-              Travel@tripzodo.com
+             travel@tripzodo.com
             </li>
             <li className="flex items-center">
               <FaMapMarkerAlt className="text-[#fed42a] text-2xl mr-3" />

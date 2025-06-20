@@ -67,12 +67,12 @@ const Booknow = () => {
     },
     {
       title: 'Email Address',
-      content: 'Travel@tripzodo.com',
+      content: 'travel@tripzodo.com',
       image: '/contact/emaill.png',
     },
     {
       title: 'Hotline',
-      content: '+91 9500093383',
+      content: '+91 9019412772',
       image: '/contact/hotlinee.png',
     },
   ];
@@ -219,7 +219,7 @@ const Booknow = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone Number (14 digits)"
+                  placeholder="Phone Number"
                   className="p-3 border border-gray-300 rounded-md w-full"
                   required
                 />

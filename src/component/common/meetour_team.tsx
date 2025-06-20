@@ -22,19 +22,19 @@ const teamMembers = [
     image: '/company/rakesh.jpeg',
   },
   {
-    name: 'Sacha Dubois',
-    role: 'GRAPHIC DESIGNER',
+    name: 'Rakesh',
+    role: 'Operations Head',
     image: '/company/rakesh.jpeg',
   },
   {
-    name: 'Chiaki Sato',
-    role: 'CAMPAIGN LEAD',
-    image: '/company/member5.png',
+    name: 'Sandeep Mathew',
+    role: 'Finance ',
+    image: '/company/Sandeep Mathew.jpeg',
   },
   {
-    name: 'Juliana Silva',
-    role: 'INFLUENCER',
-    image: '/company/member6.png',
+    name: 'Mario Wilson ',
+    role: 'Content Creator',
+    image: '/company/Mario Wilson.jpeg',
   },
 ];
 

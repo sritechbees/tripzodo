@@ -7,27 +7,27 @@ const gallerySections = [
   {
     title: 'Breathtaking Beach Escapes',
     description: 'Explore stunning coastal destinations with crystal-clear waters and golden sands.',
-    images: ['/company/gtype1.jpg', '/company/gtype1.jpg', '/company/gtype1.jpg'],
+    images: ['/packages/Breathtaking Beach Escapes1.jpg', '/packages/Breathtaking Beach Escapes22.jpg', '/packages/Breathtaking Beach Escapes3.jpg'],
   },
   {
     title: 'Majestic Mountain Adventures',
     description: 'Discover thrilling hikes, scenic views, and peaceful retreats in high-altitude wonderlands.',
-    images: ['/company/gtype2.jpg', '/company/gtype2.jpg', '/company/gtype2.jpg'],
+    images: ['/packages/Majestic Mountain Adventures1.jpg', '/packages/Majestic Mountain Adventures2.jpg', '/packages/Majestic Mountain Adventures3.jpg'],
   },
   {
     title: 'Cultural Heritage Tours',
     description: 'Dive into rich history, ancient architecture, and vibrant local traditions around the world.',
-    images: ['/company/gtype3.jpg', '/company/gtype3.jpg', '/company/gtype3.jpg'],
+    images: ['/packages/Cultural Heritage Tours1.jpg', '/packages/Cultural Heritage Tours2.jpg', '/packages/Cultural Heritage Tours3.jpg'],
   },
   {
     title: 'Romantic Getaways & Honeymoons',
     description: 'Perfect packages for couples seeking dreamy destinations and unforgettable moments.',
-    images: ['/company/gtype4.jpg', '/company/gtype4.jpg', '/company/gtype4.jpg'],
+    images: ['/packages/Romantic Getaways & Honeymoons1.jpg', '/packages/Romantic Getaways & Honeymoons2.jpg', '/packages/Romantic Getaways & Honeymoons3.jpg'],
   },
   {
     title: 'Exotic Wildlife & Nature Safaris',
     description: 'Experience close encounters with nature and wildlife in lush jungles and open savannahs.',
-    images: ['/company/gtype5.jpg', '/company/gtype5.jpg', '/company/gtype5.jpg'],
+    images: ['/packages/Exotic Wildlife & Nature Safaris1.jpg', '/packages/Exotic Wildlife & Nature Safaris2.jpg', '/packages/Exotic Wildlife & Nature Safaris3.jpg'],
   },
 ];
 
