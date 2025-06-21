@@ -65,8 +65,10 @@ const Contact = () => {
       setError("Failed to send the message.");
     }
   } catch (err) {
-    setError("An error occurred. Please try again later.");
-  }
+  console.error(err);
+  setError("An error occurred. Please try again later.");
+}
+
 
   setTimeout(() => {
     setSuccessMsg('');
