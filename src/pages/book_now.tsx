@@ -24,13 +24,13 @@ const Booknow = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
     setSuccessMsg('');
 
     const nameRegex = /^[A-Za-z\s]+$/;
-    const phoneRegex = /^\d{14}$/;
+    const phoneRegex = /^\d{10}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!nameRegex.test(formData.name)) {
@@ -44,7 +44,7 @@ const Booknow = () => {
     }
 
     if (!phoneRegex.test(formData.phone)) {
-      setError("Phone number must be exactly 14 digits without special characters.");
+      setError("Phone number must be exactly 10 digits without special characters.");
       return;
     }
 
@@ -53,11 +53,26 @@ const Booknow = () => {
       return;
     }
 
-    setSuccessMsg("📩 Message sent to 9524605488");
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    try {
+      const response = await fetch('/api/sendMail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => setSuccessMsg(''), 4000);
-  };
+      const result = await response.json();
+
+      if (response.ok) {
+        setSuccessMsg("📩 Message sent successfully!");
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setSuccessMsg(''), 4000);
+      } else {
+        setError(result.message || 'Something went wrong.');
+      }
+    } catch {
+      setError('Failed to send message. Please try again later.');
+    }
+  };  
 
   const contactDetails = [
     {
@@ -67,12 +82,12 @@ const Booknow = () => {
     },
     {
       title: 'Email Address',
-      content: 'travel@tripzodo.com',
+      content: 'Travel@tripzodo.com',
       image: '/contact/emaill.png',
     },
     {
       title: 'Hotline',
-      content: '+91 9019412772',
+      content: '+91 9500093383',
       image: '/contact/hotlinee.png',
     },
   ];
@@ -219,7 +234,7 @@ const Booknow = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone Number"
+                  placeholder="Phone Number (10 digits)"
                   className="p-3 border border-gray-300 rounded-md w-full"
                   required
                 />

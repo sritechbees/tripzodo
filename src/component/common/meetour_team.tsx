@@ -17,9 +17,9 @@ const teamMembers = [
     image: '/company/sudha1.jpeg',
   },
   {
-    name: 'Rakesh',
-    role: 'Operations Head',
-    image: '/company/rakesh.jpeg',
+    name: 'Ravi Shankar ',
+    role: 'Travel Consultant',
+    image: '/company/Ravi Shankar.jpeg',
   },
   {
     name: 'Rakesh',

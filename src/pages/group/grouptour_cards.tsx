@@ -45,22 +45,22 @@ const travelPackages = [
   {
     title: "Ancient Civilizations",
     subtopics: ["Egyptian Pyramids", "Machu Picchu", "Petra, Jordan"],
-    img: "/group/Ancient Civilizations.jpg",
+    img: "/group/Ancient Civilizations1.jpg",
   },
   {
     title: "Medieval Europe",
     subtopics: ["Castles of France", "Colosseum in Rome", "Tower of London"],
-    img: "/home/trending1.jpg",
+    img: "/group/Medieval Europe.jpg",
   },
   {
     title: "Asian Heritage Tours",
     subtopics: ["Great Wall of China", "Angkor Wat", "Kyoto Temples"],
-    img: "/home/trending1.jpg",
+    img: "/group/Asian Heritage Tours.jpg",
   },
   {
     title: "Colonial Era Journeys",
     subtopics: ["American Revolution", "British Raj", "Spanish Missions"],
-    img: "/home/trending1.jpg",
+    img: "/group/Colonial Era Journeys.jpg",
   },
 ];
 const GroupTourCards = () => {
@@ -173,32 +173,32 @@ const GroupTourCards = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 {
-                  img: "/home/trending1.jpg",
+                  img: "/group/Sunset in Santorini.jpg",
                   title: "Sunset in Santorini",
                   desc: "Golden skies over blue-domed churches – pure Mediterranean magic.",
                 },
                 {
-                  img: "/home/trending1.jpg",
+                  img: "/group/Safari in Kenya.jpg",
                   title: "Safari in Kenya",
                   desc: "Capture wildlife in their natural habitat across breathtaking savannas.",
                 },
                 {
-                  img: "/home/trending1.jpg",
+                  img: "/group/Autumn in Kyoto.jpg",
                   title: "Autumn in Kyoto",
                   desc: "Experience Japan's timeless beauty during its fiery fall foliage season.",
                 },
                 {
-                  img: "/home/trending1.jpg",
+                  img: "/group/Historic Rome.jpg",
                   title: "Historic Rome",
                   desc: "Wander the ancient streets where the Roman Empire once thrived.",
                 },
                 {
-                  img: "/home/trending1.jpg",
+                  img: "/group/Alpine Adventures.jpg",
                   title: "Alpine Adventures",
                   desc: "Snowy peaks, cozy chalets, and adrenaline-pumping ski trails await.",
                 },
                 {
-                  img: "/home/trending1.jpg",
+                  img: "/group/Desert Mirage in Dubai1.jpg",
                   title: "Desert Mirage in Dubai",
                   desc: "A luxurious blend of tradition and futuristic skyline in golden sands.",
                 },
